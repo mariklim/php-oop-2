@@ -18,6 +18,7 @@ class Prodotto{
        $this->ricette = $_ricette;
     }
 
+
     public function getTitolo()
     {
         return  $this->nome;

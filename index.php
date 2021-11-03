@@ -1,16 +1,24 @@
 <?php
 require __DIR__ . '/classes/prodotto.php';
+require __DIR__ . '/classes/ricetta.php';
 
 $ItalianStyleRoast = new Prodotto("Starbucks Italian Style Roast", "Scura","America Latina", "Starbucks® by Nespresso", 10);
 
 $StarbucksVerandaBlend = new Prodotto("Starbucks Veranda Blend", "Blonde Roast","Asia", "Caffè macinato", 5);
 
 
-$ItalianStyleRoast->SetRicette("Latte Macchiato");
-$ItalianStyleRoast->SetRicette("Spiced Flat White");
-$ItalianStyleRoast->SetRicette("Iced Caramel Latte & Vanilla Cream");
-var_dump($ItalianStyleRoast);
+// $ItalianStyleRoast->SetRicette("Latte Macchiato");
+// $ItalianStyleRoast->SetRicette("Spiced Flat White");
+// $ItalianStyleRoast->SetRicette("Iced Caramel Latte & Vanilla Cream");
+// var_dump($ItalianStyleRoast);
+$LatteMacchiato = new Ricetta("Latte Macchiato", "Caffè, latte, zucchero", "5 min");
+$SpicedFlatWhite = new Ricetta("Spiced Flat White", "Caffè, latte, zucchero, cannella", "6 min");
+$IcedCaramel = new Ricetta("Spiced Flat White", "Caffè, latte, zucchero, ccaramel, ghiaccio", "10 min");
 
+$ItalianStyleRoast->setRicette($LatteMacchiato);
+$ItalianStyleRoast->setRicette($SpicedFlatWhite);
+$ItalianStyleRoast->setRicette($IcedCaramel);
+var_dump($ItalianStyleRoast->getRicette());
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +40,7 @@ var_dump($ItalianStyleRoast);
         
     <ul>
 				<?php foreach($ItalianStyleRoast->getRicette() as $ricetta) { ?>
-					<li><?php echo $ricetta; ?></li>
+					<li><?php echo $ricetta->getNome(); ?></li>
 				<?php } ?>
 				</ul>
        
