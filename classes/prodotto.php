@@ -15,6 +15,35 @@ class Prodotto{
         $this->origine = $_origine;
         $this->formato = $_formato;
         $this->prezzo = $_prezzo;
-        $this->ricette = $_ricette;
+       $this->ricette = $_ricette;
+    }
+
+    public function getTitolo()
+    {
+        return  $this->nome;
+    }
+    public function getTostatura()
+    {
+        return $this->tostatura;
+    }
+    public function getOrigine()
+    {
+        return  $this->origine;
+    }
+    public function getFormato()
+    {
+        return $this->formato;
+    }
+    public function getPrezzo()
+    {
+        return  $this->prezzo;
+    }
+    public function getRicette()
+    {
+        return $this->ricette;
+    }
+    public function SetRicette($_ricetta)
+    {
+        $this->ricette[]=$_ricetta;
     }
 }
