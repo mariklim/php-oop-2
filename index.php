@@ -1,7 +1,8 @@
 <?php
 require __DIR__ . '/classes/prodotto.php';
 require __DIR__ . '/classes/ricetta.php';
-require_once __DIR__ . '/classes/cliente.php';
+require __DIR__ . '/classes/cliente.php';
+require __DIR__ . '/classes/clientePremium.php';
 
 $ItalianStyleRoast = new Prodotto("Starbucks Italian Style Roast", "Scura", "America Latina", "Starbucks® by Nespresso", 10);
 
@@ -31,7 +32,11 @@ $cliente_2 = new Cliente("Anna", "anna@gmail.com");
 $cliente_2->setSconto(70);
 var_dump($cliente_1);
 var_dump($cliente_2);
+
+$cliente_3 = new ClientePremium("Fabrizio", "fabrizio@gmail.com");
+var_dump($cliente_3);
 ?>
+
 
 
 <!DOCTYPE html>
